@@ -6,10 +6,8 @@ Single-page site (`index.html`) that calculates "sister days" — mirror dates e
 
 ## Version footer
 
-The footer in `index.html` contains a version link pointing to a specific git commit:
+The footer in `index.html` uses a `__COMMIT_HASH__` placeholder. The GitHub Actions deploy workflow (`.github/workflows/deploy.yml`) replaces it with the real short SHA at deploy time. **Do not** hardcode a commit hash — leave the placeholder as-is.
 
-```html
-<a href="https://github.com/q5m-ai/sister-day/commit/HASH" ...>vHASH</a>
-```
+## Deployment
 
-**After every commit you push**, update the footer's commit hash to match the new HEAD commit. Run `git rev-parse --short HEAD` to get the short hash, then replace both the URL and display text in the footer's version link.
+The site deploys to GitHub Pages automatically on push to `main` via GitHub Actions. The workflow injects the commit hash and publishes — no build step needed.
