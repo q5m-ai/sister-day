@@ -393,12 +393,12 @@ function compute() {
     const a = doyToAng(dayOfYear(mStart));
     const [t1x,t1y] = polar(a,CX,CY,R-6);
     const [t2x,t2y] = polar(a,CX,CY,R+6);
-    ticks += `<line x1="${t1x}" y1="${t1y}" x2="${t2x}" y2="${t2y}" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>`;
+    ticks += `<line x1="${t1x}" y1="${t1y}" x2="${t2x}" y2="${t2y}" stroke="rgba(0,0,0,0.22)" stroke-width="1"/>`;
     // Label centered between this month's 1st and next month's 1st
     const mid = new Date(yr, m, 16);
     const la = doyToAng(dayOfYear(mid));
     const [tlx,tly] = polar(la,CX,CY,R-26);
-    ticks += `<text x="${tlx}" y="${tly+4}" text-anchor="middle" font-size="11" fill="rgba(0,0,0,0.25)" font-family="DM Sans,sans-serif" font-weight="400">${mNames[m]}</text>`;
+    ticks += `<text x="${tlx}" y="${tly+4}" text-anchor="middle" font-size="11" fill="rgba(0,0,0,0.45)" font-family="DM Sans,sans-serif" font-weight="400">${mNames[m]}</text>`;
   }
 
   // Sun rays at summer solstice
@@ -427,15 +427,15 @@ function compute() {
 
   $('orbitalSvg').innerHTML = `
     ${ticks}
-    <circle cx="${CX}" cy="${CY}" r="${R}" fill="none" stroke="rgba(0,0,0,0.07)" stroke-width="1.5"/>
+    <circle cx="${CX}" cy="${CY}" r="${R}" fill="none" stroke="rgba(0,0,0,0.18)" stroke-width="1.5"/>
 
     <!-- Solstice axis -->
-    <line x1="${sa1x}" y1="${sa1y}" x2="${sa2x}" y2="${sa2y}" stroke="rgba(124,92,191,0.1)" stroke-width="1" stroke-dasharray="4 8"/>
+    <line x1="${sa1x}" y1="${sa1y}" x2="${sa2x}" y2="${sa2y}" stroke="rgba(124,92,191,0.3)" stroke-width="1" stroke-dasharray="4 8"/>
 
     <!-- Cold–center axis -->
-    <line x1="${pts.c.xy[0]}" y1="${pts.c.xy[1]}" x2="${CX}" y2="${CY}" stroke="rgba(58,122,181,0.1)" stroke-width="1" stroke-dasharray="4 6"/>
+    <line x1="${pts.c.xy[0]}" y1="${pts.c.xy[1]}" x2="${CX}" y2="${CY}" stroke="rgba(58,122,181,0.25)" stroke-width="1" stroke-dasharray="4 6"/>
     <!-- Hot–center axis -->
-    <line x1="${pts.h.xy[0]}" y1="${pts.h.xy[1]}" x2="${CX}" y2="${CY}" stroke="rgba(201,150,10,0.1)" stroke-width="1" stroke-dasharray="4 6"/>
+    <line x1="${pts.h.xy[0]}" y1="${pts.h.xy[1]}" x2="${CX}" y2="${CY}" stroke="rgba(201,150,10,0.25)" stroke-width="1" stroke-dasharray="4 6"/>
 
     <!-- Thermal lag arc -->
     <path d="${lagArc}" fill="none" stroke="rgba(124,92,191,0.35)" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>
