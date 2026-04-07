@@ -46,6 +46,11 @@
     font-size: 1.35rem; color: var(--muted);
     margin-bottom: 2.5rem; line-height: 1.5;
   }
+  .friendly-intro {
+    font-size: 1.1rem; line-height: 1.75; color: var(--muted);
+    margin-bottom: 2.5rem; max-width: 640px;
+  }
+  .friendly-intro strong { color: var(--text); font-weight: 500; }
   .definition {
     border-left: 3px solid var(--cold);
     padding: 1.1rem 1.4rem; margin-bottom: 2.5rem;
@@ -166,9 +171,9 @@
   <h1>Sister Day</h1>
   <p class="subtitle">The mirror date across winter's coldest point</p>
 
-  <div class="definition">
-    <strong>Sister Day</strong> — For a given location, let <em>C</em> denote the calendar date with the lowest long-term average daily temperature. The <em>sister day</em> of a date <em>D</em> is the unique date <em>D′</em> equidistant from <em>C</em> on the opposite side of the annual temperature cycle — if <em>D</em> falls <em>n</em> days after <em>C</em>, then <em>D′</em> falls <em>n</em> days before <em>C</em>, and vice versa.
-  </div>
+  <p class="friendly-intro">
+    Every date has a <strong>sister day</strong> — a partner date on the other side of winter that shares the same distance from the coldest day of the year. Pick a chilly November afternoon and its sister might be a cool day in early March. They're mirror images in the year's temperature arc, one on the way down and one on the way back up. Choose a date and city below to find yours.
+  </p>
 
   <div class="controls">
     <label>
@@ -226,6 +231,10 @@
     <p style="margin-top:0.95rem;">
       For <strong id="lagCity"></strong>, this thermal lag is <strong id="lagDays"></strong> — the atmosphere needs that long to exhaust its stored warmth after the solstice turns the corner.
     </p>
+  </div>
+
+  <div class="definition">
+    <strong>Formal definition</strong> — For a given location, let <em>C</em> denote the calendar date with the lowest long-term average daily temperature. The <em>sister day</em> of a date <em>D</em> is the unique date <em>D′</em> equidistant from <em>C</em> on the opposite side of the annual temperature cycle — if <em>D</em> falls <em>n</em> days after <em>C</em>, then <em>D′</em> falls <em>n</em> days before <em>C</em>, and vice versa.
   </div>
 
   <footer>A concept by Erik Kalviainen · Built with Claude · <a href="https://github.com/q5m-ai/sister-day" style="color:var(--muted)">GitHub</a> · <a href="https://github.com/q5m-ai/sister-day/commit/132d775" style="color:var(--muted)">v132d775</a></footer>
